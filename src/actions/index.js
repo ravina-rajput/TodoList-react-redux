@@ -1,9 +1,8 @@
 let nextTodoId = 0;
 
-export const addToDo = text => ({
+export const addToDo = toDo => ({
   type: "ADD_TODO",
-  id: nextTodoId++,
-  text
+  payload: toDo
 });
 
 export const setVisibilityFilter = filter => ({
@@ -14,6 +13,16 @@ export const setVisibilityFilter = filter => ({
 export const toggleTodo = id => ({
   type: "TOGGLE_TODO",
   id
+});
+
+export const setEditMode = toDo => ({
+  type: "SET_EDIT_MODE",
+  payload: toDo
+});
+
+export const editTodoAction = toDo => ({
+  type: "EDIT_TODO_ACTION",
+  payload: toDo
 });
 
 export const VisibilityFilters = {
